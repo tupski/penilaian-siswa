@@ -1,0 +1,75 @@
+/* Sidebar transitions */
+.sidebar,
+.content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Smooth hover effects */
+.sidebar .nav-link {
+    transition: all 0.2s ease;
+    transform: translateX(0);
+}
+
+.sidebar .nav-link:hover {
+    transform: translateX(5px);
+}
+
+/* Button animation */
+#sidebarCollapse i {
+    transition: transform 0.3s ease;
+}
+
+#sidebarCollapse:hover i {
+    transform: scale(1.1);
+}
+
+/* Active menu indicator */
+.sidebar .nav-link.active {
+    position: relative;
+}
+
+.sidebar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .sidebar .sidebar-header h5 {
+        font-size: 1rem;
+    }
+    
+    .sidebar .sidebar-header small {
+        font-size: 0.7rem;
+    }
+    
+    .sidebar .nav-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-top h5 {
+        font-size: 0.9rem;
+    }
+}
