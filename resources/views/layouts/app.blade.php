@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Sistem Penilaian Siswa - SMART Method</title>
     
@@ -32,7 +32,7 @@
         }
         
         /* ========================================
-           WRAPPER - FLEX CONTAINER
+           WRAPPER
            ======================================== */
         .wrapper {
             display: flex;
@@ -45,22 +45,46 @@
            SIDEBAR
            ======================================== */
         .sidebar {
-            width: 250px;
-            min-width: 250px;
-            max-width: 250px;
+            width: 280px;
+            min-width: 280px;
+            max-width: 280px;
             background: linear-gradient(135deg, #2d3e50 0%, #1a2a3a 100%);
             color: #e8edf2;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
             position: fixed;
             left: 0;
             top: 0;
             bottom: 0;
-            z-index: 1050;
+            z-index: 1060;
             display: flex;
             flex-direction: column;
             height: 100vh;
             overflow-y: auto;
             overflow-x: hidden;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+        }
+        
+        /* SIDEBAR - DESKTOP (default terbuka) */
+        @media (min-width: 769px) {
+            .sidebar {
+                transform: translateX(0) !important;
+            }
+            .sidebar.closed {
+                transform: translateX(-100%) !important;
+            }
+        }
+        
+        /* SIDEBAR - MOBILE (default tertutup) */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+                min-width: 280px;
+                max-width: 280px;
+            }
+            .sidebar.open {
+                transform: translateX(0) !important;
+            }
         }
         
         .sidebar::-webkit-scrollbar {
@@ -110,12 +134,14 @@
             display: block;
             font-size: 0.85rem;
             font-weight: 500;
+            text-decoration: none;
         }
         
         .sidebar .nav-link:hover {
             background: rgba(255,255,255,0.08);
             color: #ffffff;
             transform: translateX(5px);
+            text-decoration: none;
         }
         
         .sidebar .nav-link.active {
@@ -168,14 +194,49 @@
         }
         
         /* ========================================
+           OVERLAY
+           ======================================== */
+        .overlay {
+            display: none !important;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1055;
+            cursor: pointer;
+        }
+        
+        .overlay.show {
+            display: block !important;
+        }
+        
+        @media (min-width: 769px) {
+            .overlay {
+                display: none !important;
+            }
+            .overlay.show {
+                display: none !important;
+            }
+        }
+        
+        /* ========================================
            CONTENT UTAMA
            ======================================== */
         .content {
             flex: 1;
             min-height: 100vh;
-            transition: all 0.3s ease-in-out;
-            margin-left: 250px;
-            width: calc(100% - 250px);
+            transition: margin-left 0.3s ease-in-out;
+            margin-left: 280px;
+            width: calc(100% - 280px);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
         }
         
         /* ========================================
@@ -189,6 +250,24 @@
             top: 0;
             z-index: 1040;
             border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .navbar-top .navbar-left {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            flex: 1 1 auto;
+        }
+        
+        .navbar-top .navbar-right {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
         
         .navbar-top h5 {
@@ -196,6 +275,10 @@
             margin-bottom: 0;
             color: #2c3e50;
             font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
         }
         
         #sidebarCollapse {
@@ -207,6 +290,7 @@
             cursor: pointer;
             transition: all 0.3s;
             font-size: 0.9rem;
+            flex-shrink: 0;
         }
         
         #sidebarCollapse:hover {
@@ -222,78 +306,11 @@
         }
         
         /* ========================================
-           OVERLAY (Untuk Mobile)
-           ======================================== */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1045;
-            cursor: pointer;
-        }
-        
-        .overlay.active {
-            display: block;
-        }
-        
-        /* ========================================
-           RESPONSIF: DESKTOP (>= 769px)
-           ======================================== */
-        @media (min-width: 769px) {
-            .sidebar {
-                margin-left: 0 !important;
-            }
-            
-            .sidebar.active {
-                margin-left: -250px !important;
-            }
-            
-            .content {
-                margin-left: 250px;
-                width: calc(100% - 250px);
-            }
-            
-            .content.active {
-                margin-left: 0;
-                width: 100%;
-            }
-            
-            .overlay {
-                display: none !important;
-            }
-        }
-        
-        /* ========================================
-           RESPONSIF: MOBILE (<= 768px)
+           RESPONSIF: MOBILE (≤ 768px)
            ======================================== */
         @media (max-width: 768px) {
-            .sidebar {
-                margin-left: -250px;
-                width: 250px;
-                min-width: 250px;
-                max-width: 250px;
-            }
-            
-            .sidebar.active {
-                margin-left: 0;
-            }
-            
-            .content {
-                margin-left: 0;
-                width: 100%;
-            }
-            
-            .content.active {
-                margin-left: 0;
-                width: 100%;
-            }
-            
             .main-content {
-                padding: 12px !important;
+                padding: 10px !important;
             }
             
             .navbar-top {
@@ -302,8 +319,7 @@
             
             .navbar-top h5 {
                 font-size: 11px !important;
-                margin-left: 8px !important;
-                max-width: 120px;
+                max-width: 100px !important;
             }
             
             #sidebarCollapse {
@@ -315,25 +331,23 @@
                 font-size: 1.1rem !important;
             }
             h3 {
-                font-size: 1rem !important;
+                font-size: 0.95rem !important;
             }
             h4 {
-                font-size: 0.9rem !important;
+                font-size: 0.85rem !important;
             }
             h5 {
-                font-size: 0.8rem !important;
+                font-size: 0.75rem !important;
             }
             
             .card-body {
-                padding: 12px !important;
+                padding: 10px !important;
             }
-            
             .card-header {
-                padding: 8px 12px !important;
+                padding: 6px 10px !important;
             }
-            
             .card-header h5 {
-                font-size: 0.75rem !important;
+                font-size: 0.7rem !important;
             }
             
             .form-control {
@@ -341,206 +355,144 @@
                 padding: 0.4rem 0.7rem !important;
                 height: auto !important;
             }
-            
             .form-group {
-                margin-bottom: 0.8rem !important;
+                margin-bottom: 0.6rem !important;
             }
-            
             .form-group label {
                 font-size: 0.7rem !important;
                 margin-bottom: 0.2rem !important;
             }
             
-            .col-form-label {
-                font-size: 0.7rem !important;
-                padding-top: 0 !important;
-                padding-bottom: 0 !important;
-            }
-            
             .btn {
-                font-size: 0.7rem !important;
-                padding: 5px 10px !important;
+                font-size: 0.65rem !important;
+                padding: 4px 8px !important;
                 border-radius: 6px !important;
             }
-            
             .btn-sm {
-                font-size: 0.6rem !important;
-                padding: 3px 6px !important;
+                font-size: 0.55rem !important;
+                padding: 2px 5px !important;
             }
-            
             .btn-group .btn {
-                font-size: 0.6rem !important;
-                padding: 3px 6px !important;
+                font-size: 0.55rem !important;
+                padding: 2px 5px !important;
             }
             
             .table {
-                font-size: 0.65rem !important;
-            }
-            
-            .table th,
-            .table td {
-                padding: 4px 6px !important;
-                font-size: 0.65rem !important;
-            }
-            
-            .table .btn-sm {
-                padding: 2px 5px !important;
-                font-size: 0.55rem !important;
-            }
-            
-            .badge {
-                font-size: 0.55rem !important;
-                padding: 2px 6px !important;
-            }
-            
-            .badge-pill {
-                padding: 3px 8px !important;
-            }
-            
-            .alert {
-                font-size: 0.7rem !important;
-                padding: 0.5rem 0.8rem !important;
-            }
-            
-            .card-stats .card-body {
-                padding: 10px !important;
-            }
-            
-            .card-stats h2 {
-                font-size: 1.1rem !important;
-            }
-            
-            .card-stats h3 {
-                font-size: 1rem !important;
-            }
-            
-            .card-stats h6 {
-                font-size: 0.55rem !important;
-            }
-            
-            .card-stats i {
-                font-size: 1.2rem !important;
-            }
-            
-            .progress {
-                height: 16px !important;
-            }
-            
-            .progress-bar {
                 font-size: 0.6rem !important;
-                line-height: 16px !important;
             }
-            
-            .select2-container .select2-selection--single {
-                height: auto !important;
-                padding: 4px 8px !important;
-            }
-            
-            .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
-                font-size: 0.75rem !important;
-                padding-left: 8px !important;
-            }
-            
-            .custom-control-label {
-                font-size: 0.7rem !important;
-                padding-left: 5px !important;
-            }
-            
-            .custom-control {
-                padding-left: 1.5rem !important;
-                margin-right: 5px !important;
-            }
-        }
-        
-        /* ========================================
-           RESPONSIF: MOBILE KECIL (<= 576px)
-           ======================================== */
-        @media (max-width: 576px) {
-            .main-content {
-                padding: 8px !important;
-            }
-            
-            .container-fluid {
-                padding-left: 8px !important;
-                padding-right: 8px !important;
-            }
-            
-            .row {
-                margin-left: -4px !important;
-                margin-right: -4px !important;
-            }
-            
-            .col-6, .col-sm-6, .col-md-3, .col-md-4, .col-md-6 {
-                padding-left: 4px !important;
-                padding-right: 4px !important;
-            }
-            
-            .navbar-top h5 {
-                max-width: 80px;
-                font-size: 10px !important;
-            }
-            
-            .radio-group .custom-control {
-                flex: 0 0 calc(50% - 6px);
-                margin-right: 0;
-                margin-bottom: 4px;
-            }
-            
-            .radio-group .custom-control-label {
-                font-size: 0.65rem !important;
-            }
-            
             .table th,
             .table td {
                 padding: 3px 4px !important;
                 font-size: 0.6rem !important;
             }
-            
             .table .btn-sm {
                 padding: 1px 4px !important;
                 font-size: 0.5rem !important;
             }
             
-            .table .btn-sm i {
+            .badge {
                 font-size: 0.5rem !important;
-            }
-            
-            .btn-group .btn {
-                font-size: 0.55rem !important;
                 padding: 2px 5px !important;
             }
+            .badge-pill {
+                padding: 2px 6px !important;
+            }
             
+            .alert {
+                font-size: 0.65rem !important;
+                padding: 0.4rem 0.7rem !important;
+            }
+            
+            .card-stats .card-body {
+                padding: 8px !important;
+            }
             .card-stats h2 {
                 font-size: 0.95rem !important;
             }
-            
             .card-stats h3 {
                 font-size: 0.85rem !important;
             }
-            
+            .card-stats h6 {
+                font-size: 0.5rem !important;
+            }
             .card-stats i {
-                font-size: 1rem !important;
+                font-size: 0.9rem !important;
             }
             
-            h2 {
-                font-size: 0.95rem !important;
+            .progress {
+                height: 14px !important;
+            }
+            .progress-bar {
+                font-size: 0.55rem !important;
+                line-height: 14px !important;
+            }
+            
+            .container-fluid {
+                padding-left: 6px !important;
+                padding-right: 6px !important;
+            }
+            
+            .row {
+                margin-left: -3px !important;
+                margin-right: -3px !important;
+            }
+            
+            .col-6, .col-sm-6, .col-md-3, .col-md-4, .col-md-6 {
+                padding-left: 3px !important;
+                padding-right: 3px !important;
             }
         }
         
         /* ========================================
-           RESPONSIF: TABLET (769px - 1024px)
+           RESPONSIF: MOBILE KECIL (≤ 576px)
            ======================================== */
-        @media (min-width: 769px) and (max-width: 1024px) {
+        @media (max-width: 576px) {
             .main-content {
-                padding: 15px !important;
+                padding: 6px !important;
+            }
+            
+            .container-fluid {
+                padding-left: 4px !important;
+                padding-right: 4px !important;
+            }
+            
+            .navbar-top h5 {
+                max-width: 70px !important;
+                font-size: 9px !important;
+            }
+            
+            .table th,
+            .table td {
+                padding: 2px 3px !important;
+                font-size: 0.5rem !important;
+            }
+            
+            .btn-group .btn {
+                font-size: 0.5rem !important;
+                padding: 1px 4px !important;
+            }
+            
+            h2 {
+                font-size: 0.9rem !important;
             }
             
             .card-stats h2 {
-                font-size: 1.3rem !important;
+                font-size: 0.8rem !important;
+            }
+            .card-stats h3 {
+                font-size: 0.7rem !important;
+            }
+            .card-stats i {
+                font-size: 0.7rem !important;
             }
             
-            .card-stats h3 {
-                font-size: 1.1rem !important;
+            .radio-group .custom-control {
+                flex: 0 0 calc(50% - 4px);
+                margin-right: 0;
+                margin-bottom: 3px;
+            }
+            .radio-group .custom-control-label {
+                font-size: 0.6rem !important;
             }
         }
         
@@ -555,7 +507,7 @@
         }
         
         .table-wrapper table {
-            min-width: 600px;
+            min-width: 500px;
             width: 100%;
             margin-bottom: 0;
         }
@@ -571,24 +523,12 @@
         .radio-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         
         .radio-group .custom-control {
-            margin-right: 10px;
+            margin-right: 8px;
             margin-bottom: 0;
-        }
-        
-        @media (max-width: 576px) {
-            .radio-group .custom-control {
-                flex: 0 0 calc(50% - 6px);
-                margin-right: 0;
-                margin-bottom: 4px;
-            }
-            
-            .radio-group .custom-control-label {
-                font-size: 0.65rem !important;
-            }
         }
         
         /* ========================================
@@ -609,11 +549,11 @@
         }
         
         .card-stats .card-body {
-            padding: 1.25rem !important;
+            padding: 1rem !important;
         }
         
         .card-stats h6 {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             margin-bottom: 0;
             letter-spacing: 0.5px;
             font-weight: 600;
@@ -621,19 +561,19 @@
         }
         
         .card-stats h2 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 0;
             font-weight: 700;
         }
         
         .card-stats h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0;
             font-weight: 700;
         }
         
         .card-stats i {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             opacity: 0.8;
         }
         
@@ -646,7 +586,8 @@
             .btn,
             .btn-group,
             .no-print,
-            #sidebarCollapse {
+            #sidebarCollapse,
+            .overlay {
                 display: none !important;
             }
             
@@ -665,22 +606,15 @@
                 border: 1px solid #ddd !important;
                 box-shadow: none !important;
             }
-            
-            .card-stats {
-                border: 1px solid #ddd !important;
-            }
-            
-            .table-wrapper {
-                overflow: visible !important;
-            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
+        <!-- OVERLAY -->
         <div class="overlay" id="overlay"></div>
         
-        <!-- Sidebar -->
+        <!-- SIDEBAR -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h5><i class="fas fa-trophy"></i> SPK SMART</h5>
@@ -728,18 +662,18 @@
             </div>
         </div>
         
-        <!-- Page Content -->
+        <!-- CONTENT -->
         <div class="content" id="content">
-            <nav class="navbar-top d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center" style="min-width: 0; flex: 1 1 auto;">
+            <nav class="navbar-top">
+                <div class="navbar-left">
                     <button type="button" id="sidebarCollapse" class="btn">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <h5 class="mb-0 ml-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                    <h5 class="mb-0 ml-3">
                         Selamat Datang, {{ auth()->user()->name ?? 'Guest' }}
                     </h5>
                 </div>
-                <div class="d-flex align-items-center" style="flex-shrink: 0;">
+                <div class="navbar-right">
                     <span class="badge badge-primary mr-3 d-none d-sm-inline-block">
                         {{ auth()->user() && auth()->user()->role == 'admin' ? 'Administrator' : 'Guru' }}
                     </span>
@@ -793,54 +727,64 @@
     <script>
         $(document).ready(function() {
             var sidebar = $('#sidebar');
-            var content = $('#content');
             var overlay = $('#overlay');
             
             function isMobile() {
                 return $(window).width() <= 768;
             }
             
-            function toggleSidebar(show) {
-                if (show === undefined) {
-                    sidebar.toggleClass('active');
-                    content.toggleClass('active');
-                    overlay.toggleClass('active');
-                } else if (show) {
-                    sidebar.addClass('active');
-                    content.addClass('active');
-                    overlay.addClass('active');
+            function toggleSidebar(forceState) {
+                var isOpen = sidebar.hasClass('open');
+                
+                if (forceState === true) {
+                    sidebar.addClass('open');
+                    overlay.addClass('show');
+                } else if (forceState === false) {
+                    sidebar.removeClass('open');
+                    overlay.removeClass('show');
                 } else {
-                    sidebar.removeClass('active');
-                    content.removeClass('active');
-                    overlay.removeClass('active');
+                    if (isOpen) {
+                        sidebar.removeClass('open');
+                        overlay.removeClass('show');
+                    } else {
+                        sidebar.addClass('open');
+                        overlay.addClass('show');
+                    }
                 }
                 
-                var isOpen = !sidebar.hasClass('active');
-                localStorage.setItem('sidebarState', isOpen ? 'open' : 'closed');
+                var newState = sidebar.hasClass('open');
+                localStorage.setItem('sidebarOpen', newState ? 'true' : 'false');
             }
             
-            $('#sidebarCollapse').on('click', function() {
+            // Toggle sidebar saat tombol diklik
+            $('#sidebarCollapse').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 toggleSidebar();
             });
             
+            // Tutup sidebar saat overlay diklik (hanya di mobile)
             overlay.on('click', function() {
                 if (isMobile()) {
                     toggleSidebar(false);
                 }
             });
             
-            function loadSavedState() {
-                var savedState = localStorage.getItem('sidebarState');
+            // Load state dari localStorage
+            function loadState() {
+                var savedState = localStorage.getItem('sidebarOpen');
                 var mobile = isMobile();
                 
                 if (mobile) {
-                    if (savedState === 'open') {
+                    // Mobile: default tertutup
+                    if (savedState === 'true') {
                         toggleSidebar(true);
                     } else {
                         toggleSidebar(false);
                     }
                 } else {
-                    if (savedState === 'closed') {
+                    // Desktop: default terbuka
+                    if (savedState === 'false') {
                         toggleSidebar(false);
                     } else {
                         toggleSidebar(true);
@@ -848,18 +792,18 @@
                 }
             }
             
+            // Handle resize
             var resizeTimer;
             $(window).on('resize', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
                     var mobile = isMobile();
-                    var isOpen = !sidebar.hasClass('active');
+                    var isOpen = sidebar.hasClass('open');
                     
                     if (mobile) {
-                        if (isOpen) {
-                            toggleSidebar(false);
-                        }
+                        // Di mobile, biarkan user yang menentukan
                     } else {
+                        // Di desktop, pastikan sidebar terbuka
                         if (!isOpen) {
                             toggleSidebar(true);
                         }
@@ -867,6 +811,7 @@
                 }, 200);
             });
             
+            // Keyboard shortcut: Ctrl+B
             $(document).on('keydown', function(e) {
                 if (e.ctrlKey && (e.key === 'b' || e.key === 'B')) {
                     e.preventDefault();
@@ -874,8 +819,10 @@
                 }
             });
             
-            loadSavedState();
+            // Load state
+            loadState();
             
+            // DataTables
             if ($('.datatable').length) {
                 $('.datatable').each(function() {
                     if (!$.fn.DataTable.isDataTable($(this))) {
@@ -895,12 +842,14 @@
                 });
             }
             
+            // Auto dismiss alert
             setTimeout(function() {
                 $(".alert").fadeOut("slow", function() {
                     $(this).remove();
                 });
             }, 4000);
             
+            // Tooltip
             if ($('[data-toggle="tooltip"]').length) {
                 $('[data-toggle="tooltip"]').tooltip();
             }

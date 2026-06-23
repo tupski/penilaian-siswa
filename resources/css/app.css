@@ -446,3 +446,234 @@ footer {
         border: 1px solid #ddd !important;
     }
 }
+
+/* ========================================
+   PERBAIKAN KHUSUS UNTUK MOBILE (TAMBAHAN)
+   ======================================== */
+
+/* ---------- MOBILE: SEMUA TEKS LEBIH KECIL ---------- */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px !important;
+    }
+    
+    .table-responsive {
+        font-size: 0.65rem !important;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 4px 6px !important;
+        font-size: 0.6rem !important;
+    }
+    
+    .card-body {
+        padding: 10px !important;
+    }
+    
+    .btn {
+        font-size: 0.65rem !important;
+        padding: 4px 8px !important;
+    }
+    
+    .btn-sm {
+        font-size: 0.55rem !important;
+        padding: 2px 5px !important;
+    }
+    
+    h2 {
+        font-size: 1rem !important;
+    }
+    
+    .card-stats h2 {
+        font-size: 0.9rem !important;
+    }
+    .card-stats h6 {
+        font-size: 0.5rem !important;
+    }
+    .card-stats i {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ---------- HP KECIL (≤ 576px) ---------- */
+@media (max-width: 576px) {
+    .card-stats .card-body {
+        padding: 6px !important;
+    }
+    .card-stats h2 {
+        font-size: 0.75rem !important;
+    }
+    .card-stats h6 {
+        font-size: 0.45rem !important;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 2px 3px !important;
+        font-size: 0.5rem !important;
+    }
+}
+
+/* ---------- HP SANGAT KECIL (≤ 360px) ---------- */
+@media (max-width: 360px) {
+    body {
+        font-size: 10px !important;
+    }
+    
+    .table th, 
+    .table td {
+        padding: 1px 2px !important;
+        font-size: 0.4rem !important;
+    }
+    
+    .btn {
+        font-size: 0.5rem !important;
+        padding: 2px 4px !important;
+    }
+    
+    .btn-sm {
+        font-size: 0.4rem !important;
+        padding: 1px 3px !important;
+    }
+    
+    h2 {
+        font-size: 0.8rem !important;
+    }
+    h3 {
+        font-size: 0.7rem !important;
+    }
+    
+    .card-stats h2 {
+        font-size: 0.6rem !important;
+    }
+    .card-stats h6 {
+        font-size: 0.35rem !important;
+    }
+    .card-stats i {
+        font-size: 0.5rem !important;
+    }
+    
+    .badge {
+        font-size: 0.4rem !important;
+        padding: 1px 4px !important;
+    }
+    
+    .form-control {
+        font-size: 0.6rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+    
+    .form-group label {
+        font-size: 0.55rem !important;
+    }
+    
+    .radio-group .custom-control-label {
+        font-size: 0.5rem !important;
+    }
+}
+
+/* ---------- SIDEBAR PERBAIKAN MOBILE ---------- */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 260px !important;
+        min-width: 260px !important;
+        max-width: 260px !important;
+    }
+    
+    .sidebar .nav-link {
+        font-size: 0.75rem !important;
+        padding: 10px 12px !important;
+    }
+    
+    .sidebar .nav-link i {
+        font-size: 0.8rem !important;
+        margin-right: 10px !important;
+    }
+    
+    .sidebar .sidebar-header h5 {
+        font-size: 0.95rem !important;
+    }
+    
+    .sidebar .sidebar-header small {
+        font-size: 9px !important;
+    }
+    
+    .logout-btn button {
+        font-size: 0.75rem !important;
+        padding: 10px 12px !important;
+    }
+}
+
+/* ---------- OVERLAY PERBAIKAN ---------- */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1045;
+    cursor: pointer;
+}
+
+.overlay.active,
+.overlay.show {
+    display: block !important;
+}
+
+/* ---------- RESPONSIF: NAVBAR TOP ---------- */
+@media (max-width: 768px) {
+    .navbar-top {
+        padding: 6px 10px !important;
+    }
+    
+    .navbar-top h5 {
+        font-size: 10px !important;
+        max-width: 80px !important;
+    }
+    
+    #sidebarCollapse {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* ---------- RESPONSIF: CONTAINER ---------- */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+}
+
+/* ---------- RESPONSIF: MODAL ---------- */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 10px !important;
+    }
+    
+    .modal-body {
+        padding: 10px !important;
+    }
+    
+    .modal-header {
+        padding: 8px 12px !important;
+    }
+    
+    .modal-footer {
+        padding: 8px 12px !important;
+    }
+    
+    .modal-header h5 {
+        font-size: 0.85rem !important;
+    }
+}
