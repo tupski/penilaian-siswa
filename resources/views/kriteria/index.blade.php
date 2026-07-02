@@ -3,10 +3,10 @@
 @section('content')
 <div class="container-fluid">
     <div class="row mb-3">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
             <h2>Data Kriteria</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-12 col-md-6 text-md-right">
             {{-- HANYA ADMIN YANG BISA MELIHAT TOMBOL TAMBAH --}}
             @if(auth()->user() && auth()->user()->isAdmin())
             <a href="{{ route('kriteria.create') }}" class="btn btn-primary">
@@ -15,7 +15,7 @@
             @endif
         </div>
     </div>
-    
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">

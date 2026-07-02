@@ -3,11 +3,11 @@
 @section('content')
 <div class="container-fluid">
     <div class="row mb-3">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
             <h2>Data Penilaian Siswa</h2>
         </div>
-        <div class="col-md-6 text-right">
-            <div class="btn-group" role="group">
+        <div class="col-12 col-md-6 text-md-right">
+            <div class="d-flex flex-wrap justify-content-md-end justify-content-start" style="gap: 5px;">
                 <a href="{{ route('penilaian.create') }}" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Input Penilaian
                 </a>
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
@@ -61,12 +61,12 @@
 <script>
     $(document).ready(function() {
         var table = $('#penilaian-table');
-        
+
         // Hancurkan instance DataTable jika sudah ada
         if ($.fn.dataTable.isDataTable(table)) {
             table.DataTable().destroy();
         }
-        
+
         // Inisialisasi DataTable
         table.DataTable({
             "language": {

@@ -1,5 +1,4 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './sidebar.css';
 
 /* Custom CSS untuk aplikasi */
 .custom-card {
@@ -25,4 +24,45 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #f8f9fa;
+}
+
+/* Utility classes */
+.table-container {
+    overflow-x: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 767.98px) {
+    .main-content {
+        padding: 10px !important;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    .dataTables_wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-responsive {
+        font-size: 12px;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main-content {
+        padding: 15px !important;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
 }

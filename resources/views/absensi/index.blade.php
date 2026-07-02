@@ -5,7 +5,7 @@
     <div class="row mb-3">
         <div class="col-12 col-md-6">
             <h2 class="mb-2">
-                <i class="fas fa-calendar-check text-primary"></i> 
+                <i class="fas fa-calendar-check text-primary"></i>
                 Data Absensi Siswa
             </h2>
             <p class="text-muted small">
@@ -36,7 +36,7 @@
                 </form>
             </div>
             @endif
-            
+
             @if(auth()->user() && auth()->user()->isGuru())
             <div class="d-flex flex-wrap gap-2 justify-content-md-end" style="gap: 5px;">
                 <a href="{{ route('absensi.create') }}" class="btn btn-primary" style="background: #1e3c72; border-color: #1e3c72; padding: 5px 12px; font-size: 0.75rem; border-radius: 4px;">
@@ -140,7 +140,7 @@
                             $sakitCount = $detail['sakit'] ?? 0;
                             $izinCount = $detail['izin'] ?? 0;
                             $alpaCount = $detail['alpa'] ?? 0;
-                            
+
                             if ($persen >= 90) {
                                 $badgeClass = 'success';
                             } elseif ($persen >= 75) {
@@ -161,8 +161,8 @@
                             <td class="text-center">
                                 <div class="d-inline-flex align-items-center">
                                     <div class="progress mr-1" style="height: 4px; width: 40px;">
-                                        <div class="progress-bar bg-{{ $badgeClass }}" 
-                                            role="progressbar" 
+                                        <div class="progress-bar bg-{{ $badgeClass }}"
+                                            role="progressbar"
                                             style="width: <?= $persen ?>%;"></div>
                                     </div>
                                     <span class="small"><?= $persen ?>%</span>
@@ -175,15 +175,15 @@
                             </td>
                             <td class="text-center">
                                 <div class="btn-group btn-group-sm">
-                                    <a href="{{ route('absensi.rekap', $item->id) }}" 
-                                       class="btn btn-info btn-sm py-0 px-2" 
+                                    <a href="{{ route('absensi.rekap', $item->id) }}"
+                                       class="btn btn-info btn-sm py-0 px-2"
                                        title="Rekap"
                                        style="background: #17a2b8; border-color: #17a2b8; padding: 4px 8px; font-size: 0.7rem;">
                                         <i class="fas fa-chart-line"></i>
                                     </a>
                                     @if(auth()->user() && (auth()->user()->isAdmin() || auth()->user()->isGuru()))
-                                    <a href="{{ route('absensi.create', $item->id) }}" 
-                                       class="btn btn-primary btn-sm py-0 px-2" 
+                                    <a href="{{ route('absensi.create', $item->id) }}"
+                                       class="btn btn-primary btn-sm py-0 px-2"
                                        title="Tambah Absensi"
                                        style="background: #1e3c72; border-color: #1e3c72; padding: 4px 8px; font-size: 0.7rem;">
                                         <i class="fas fa-plus"></i>
@@ -210,7 +210,7 @@ $(document).ready(function() {
         if ($.fn.dataTable.isDataTable(table)) {
             table.DataTable().destroy();
         }
-        
+
         // Inisialisasi DataTable
         table.DataTable({
             "language": {
@@ -224,10 +224,9 @@ $(document).ready(function() {
             "columnDefs": [
                 { "orderable": false, "targets": [0, 10] }
             ],
-            "responsive": false,
+            "responsive": true,
             "autoWidth": false,
             "scrollX": true,
-            "scrollY": "500px",
             "scrollCollapse": true
         });
     }

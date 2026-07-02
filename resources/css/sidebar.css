@@ -55,21 +55,66 @@
 }
 
 /* Mobile optimization */
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 200px !important;
+        min-width: 200px !important;
+    }
+
     .sidebar .sidebar-header h5 {
         font-size: 1rem;
     }
-    
+
     .sidebar .sidebar-header small {
         font-size: 0.7rem;
     }
-    
+
     .sidebar .nav-link {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
-    
+
     .navbar-top h5 {
         font-size: 0.9rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 575.98px) {
+    .sidebar {
+        width: 220px !important;
+        min-width: 220px !important;
+    }
+
+    .sidebar .sidebar-header {
+        padding: 15px 10px;
+    }
+
+    .sidebar .sidebar-header h5 {
+        font-size: 0.9rem;
+    }
+
+    .sidebar .sidebar-header small {
+        font-size: 0.65rem;
+    }
+
+    .sidebar .nav-link {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .sidebar .nav-link i {
+        margin-right: 8px;
+        width: 16px;
+        font-size: 0.8rem;
+    }
+
+    .sidebar-footer {
+        padding: 10px;
+    }
+
+    .logout-btn button {
+        padding: 8px 10px;
+        font-size: 0.8rem;
     }
 }

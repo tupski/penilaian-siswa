@@ -3,19 +3,20 @@
 @section('content')
 <div class="container-fluid">
     <div class="row mb-3">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
             <h2>Data Siswa</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-12 col-md-6 text-md-right">
             <a href="{{ route('alternatif.create') }}" class="btn btn-primary">
                 <i class="fas fa-plus"></i> Tambah Siswa
             </a>
         </div>
     </div>
-    
+
     <div class="card">
         <div class="card-body">
-            <table class="table table-bordered datatable" id="siswa-table">
+            <div class="table-responsive">
+                <table class="table table-bordered datatable" id="siswa-table">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -50,6 +51,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </div>
@@ -60,19 +62,19 @@
 <script>
     $(document).ready(function() {
         var table = $('#siswa-table');
-        
+
         // Hancurkan instance DataTable jika sudah ada
         if ($.fn.dataTable.isDataTable(table)) {
             table.DataTable().destroy();
         }
-        
-        // Inisialisasi DataTable dengan scroll
+
+        // Inisialisasi DataTable dengan responsive
         table.DataTable({
             "paging": false,
             "ordering": true,
             "info": true,
             "searching": true,
-            "scrollY": "400px",
+            "responsive": true,
             "scrollX": true,
             "scrollCollapse": true,
             "language": {

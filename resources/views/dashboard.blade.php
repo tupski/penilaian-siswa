@@ -3,13 +3,13 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-12 col-md-12">
             <h2 class="mb-4">Dashboard</h2>
         </div>
     </div>
-    
+
     <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-12 col-md-4 mb-4">
             <div class="card card-stats bg-primary text-white">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -22,8 +22,8 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col-md-4 mb-4">
+
+        <div class="col-12 col-md-4 mb-4">
             <div class="card card-stats bg-success text-white">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -36,8 +36,8 @@
                 </div>
             </div>
         </div>
-        
-        <div class="col-md-4 mb-4">
+
+        <div class="col-12 col-md-4 mb-4">
             <div class="card card-stats bg-info text-white">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
@@ -51,9 +51,9 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-12 col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h5>Selamat Datang di Sistem Penilaian Siswa</h5>
