@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for D:\TUPAS\Projects\penilaian-siswa\app\Http\Controllers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../_css/bootstrap.min.css?v=12.5.5" rel="stylesheet" type="text/css">
+  <link href="../../_css/billboard.min.css?v=12.5.5" rel="stylesheet" type="text/css">
+  <link href="../../_css/style.css?v=12.5.5" rel="stylesheet" type="text/css">
+  <link href="../../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../../index.html">D:\TUPAS\Projects\penilaian-siswa\app</a></li>
+         <li class="breadcrumb-item"><a href="../index.html">Http</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Controllers</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classesCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="LaporanController.php.html#10">App\Http\Controllers\LaporanController</a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="AuthController.php.html#12">App\Http\Controllers\AuthController</a></td><td class="text-right">49%</td></tr>
+       <tr><td><a href="PenilaianController.php.html#12">App\Http\Controllers\PenilaianController</a></td><td class="text-right">63%</td></tr>
+       <tr><td><a href="AbsensiController.php.html#13">App\Http\Controllers\AbsensiController</a></td><td class="text-right">76%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+         <th class="text-right">Complexity</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="PenilaianController.php.html#12">App\Http\Controllers\PenilaianController</a></td><td class="text-right">63.6%</td><td class="text-right">23</td><td class="text-right">48</td></tr>
+       <tr><td><a href="AbsensiController.php.html#13">App\Http\Controllers\AbsensiController</a></td><td class="text-right">76.6%</td><td class="text-right">25</td><td class="text-right">32</td></tr>
+       <tr><td><a href="AuthController.php.html#12">App\Http\Controllers\AuthController</a></td><td class="text-right">49.2%</td><td class="text-right">12</td><td class="text-right">30</td></tr>
+       <tr><td><a href="LaporanController.php.html#10">App\Http\Controllers\LaporanController</a></td><td class="text-right">42.9%</td><td class="text-right">7</td><td class="text-right">16</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2 style="margin-top: 3rem;">Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodsCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AbsensiController.php.html#110"><abbr title="App\Http\Controllers\AbsensiController::destroyAllAbsensi">destroyAllAbsensi</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbsensiController.php.html#163"><abbr title="App\Http\Controllers\AbsensiController::syncAll">syncAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthController.php.html#65"><abbr title="App\Http\Controllers\AuthController::showForgotForm">showForgotForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthController.php.html#70"><abbr title="App\Http\Controllers\AuthController::sendResetLink">sendResetLink</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthController.php.html#87"><abbr title="App\Http\Controllers\AuthController::showResetForm">showResetForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthController.php.html#95"><abbr title="App\Http\Controllers\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="KriteriaController.php.html#52"><abbr title="App\Http\Controllers\KriteriaController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="KriteriaController.php.html#102"><abbr title="App\Http\Controllers\KriteriaController::subKriteria">subKriteria</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PenilaianController.php.html#107"><abbr title="App\Http\Controllers\PenilaianController::syncKehadiran">syncKehadiran</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AbsensiController.php.html#202"><abbr title="App\Http\Controllers\AbsensiController::rekapBulanan">rekapBulanan</abbr></a></td><td class="text-right">27%</td></tr>
+       <tr><td><a href="PenilaianController.php.html#155"><abbr title="App\Http\Controllers\PenilaianController::exportCSV">exportCSV</abbr></a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="LaporanController.php.html#17"><abbr title="App\Http\Controllers\LaporanController::cetakPDF">cetakPDF</abbr></a></td><td class="text-right">40%</td></tr>
+       <tr><td><a href="PenilaianController.php.html#121"><abbr title="App\Http\Controllers\PenilaianController::exportPDF">exportPDF</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="AbsensiController.php.html#129"><abbr title="App\Http\Controllers\AbsensiController::syncNilaiKehadiran">syncNilaiKehadiran</abbr></a></td><td class="text-right">89%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+         <th class="text-right">Complexity</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="LaporanController.php.html#17"><abbr title="App\Http\Controllers\LaporanController::cetakPDF">cetakPDF</abbr></a></td><td class="text-right">40.7%</td><td class="text-right">6</td><td class="text-right">13</td></tr>
+       <tr><td><a href="PenilaianController.php.html#155"><abbr title="App\Http\Controllers\PenilaianController::exportCSV">exportCSV</abbr></a></td><td class="text-right">36.1%</td><td class="text-right">5</td><td class="text-right">11</td></tr>
+       <tr><td><a href="PenilaianController.php.html#121"><abbr title="App\Http\Controllers\PenilaianController::exportPDF">exportPDF</abbr></a></td><td class="text-right">42.1%</td><td class="text-right">4</td><td class="text-right">7</td></tr>
+       <tr><td><a href="AbsensiController.php.html#129"><abbr title="App\Http\Controllers\AbsensiController::syncNilaiKehadiran">syncNilaiKehadiran</abbr></a></td><td class="text-right">89.5%</td><td class="text-right">6</td><td class="text-right">6</td></tr>
+       <tr><td><a href="AbsensiController.php.html#202"><abbr title="App\Http\Controllers\AbsensiController::rekapBulanan">rekapBulanan</abbr></a></td><td class="text-right">27.6%</td><td class="text-right">3</td><td class="text-right">6</td></tr>
+       <tr><td><a href="AuthController.php.html#70"><abbr title="App\Http\Controllers\AuthController::sendResetLink">sendResetLink</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="AuthController.php.html#95"><abbr title="App\Http\Controllers\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="PenilaianController.php.html#107"><abbr title="App\Http\Controllers\PenilaianController::syncKehadiran">syncKehadiran</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 12.5.5</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.22</a> and <a href="https://phpunit.de/">PHPUnit 12.5.19</a> at Thu Jul 2 9:07:44 WIB 2026.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../_js/billboard.pkgd.min.js?v=12.5.5" type="text/javascript"></script>
+  <script type="application/json" id="complexity_class">[[42.857142857142854,7,"LaporanController.php.html#10","App\\Http\\Controllers\\LaporanController","16.14"],[49.23076923076923,12,"AuthController.php.html#12","App\\Http\\Controllers\\AuthController","30.84"],[63.55140186915887,23,"PenilaianController.php.html#12","App\\Http\\Controllers\\PenilaianController","48.62"],[76.61290322580645,25,"AbsensiController.php.html#13","App\\Http\\Controllers\\AbsensiController","32.99"],[90.32258064516128,11,"KriteriaController.php.html#9","App\\Http\\Controllers\\KriteriaController","11.11"],[97.14285714285714,6,"RangkingController.php.html#10","App\\Http\\Controllers\\RangkingController","6"],[100,6,"AlternatifController.php.html#8","App\\Http\\Controllers\\AlternatifController","6"],[100,0,"Controller.php.html#5","App\\Http\\Controllers\\Controller","0"],[100,1,"DashboardController.php.html#9","App\\Http\\Controllers\\DashboardController","1"],[100,4,"ProfileController.php.html#11","App\\Http\\Controllers\\ProfileController","4"]]</script>
+  <script type="application/json" id="complexity_method">[[0,1,"AbsensiController.php.html#110","App\\Http\\Controllers\\AbsensiController::destroyAllAbsensi","2"],[0,1,"AbsensiController.php.html#163","App\\Http\\Controllers\\AbsensiController::syncAll","2"],[0,1,"AuthController.php.html#65","App\\Http\\Controllers\\AuthController::showForgotForm","2"],[0,2,"AuthController.php.html#70","App\\Http\\Controllers\\AuthController::sendResetLink","6"],[0,1,"AuthController.php.html#87","App\\Http\\Controllers\\AuthController::showResetForm","2"],[0,2,"AuthController.php.html#95","App\\Http\\Controllers\\AuthController::resetPassword","6"],[0,1,"KriteriaController.php.html#52","App\\Http\\Controllers\\KriteriaController::show","2"],[0,1,"KriteriaController.php.html#102","App\\Http\\Controllers\\KriteriaController::subKriteria","2"],[0,2,"PenilaianController.php.html#107","App\\Http\\Controllers\\PenilaianController::syncKehadiran","6"],[27.586206896551722,3,"AbsensiController.php.html#202","App\\Http\\Controllers\\AbsensiController::rekapBulanan","6.42"],[36.11111111111111,5,"PenilaianController.php.html#155","App\\Http\\Controllers\\PenilaianController::exportCSV","11.52"],[40.74074074074074,6,"LaporanController.php.html#17","App\\Http\\Controllers\\LaporanController::cetakPDF","13.49"],[42.10526315789473,4,"PenilaianController.php.html#121","App\\Http\\Controllers\\PenilaianController::exportPDF","7.10"],[89.47368421052632,6,"AbsensiController.php.html#129","App\\Http\\Controllers\\AbsensiController::syncNilaiKehadiran","6.04"],[93.33333333333333,4,"PenilaianController.php.html#70","App\\Http\\Controllers\\PenilaianController::update","4.00"],[94.73684210526315,2,"AbsensiController.php.html#31","App\\Http\\Controllers\\AbsensiController::store","2.00"],[94.73684210526315,2,"KriteriaController.php.html#22","App\\Http\\Controllers\\KriteriaController::store","2.00"],[97.14285714285714,6,"RangkingController.php.html#12","App\\Http\\Controllers\\RangkingController::index","6"],[100,1,"AbsensiController.php.html#15","App\\Http\\Controllers\\AbsensiController::index","1"],[100,2,"AbsensiController.php.html#22","App\\Http\\Controllers\\AbsensiController::create","2"],[100,1,"AbsensiController.php.html#60","App\\Http\\Controllers\\AbsensiController::edit","1"],[100,1,"AbsensiController.php.html#68","App\\Http\\Controllers\\AbsensiController::update","1"],[100,1,"AbsensiController.php.html#87","App\\Http\\Controllers\\AbsensiController::destroy","1"],[100,1,"AbsensiController.php.html#98","App\\Http\\Controllers\\AbsensiController::destroyAll","1"],[100,1,"AbsensiController.php.html#120","App\\Http\\Controllers\\AbsensiController::rekap","1"],[100,1,"AbsensiController.php.html#168","App\\Http\\Controllers\\AbsensiController::massCreate","1"],[100,3,"AbsensiController.php.html#177","App\\Http\\Controllers\\AbsensiController::massStore","3"],[100,1,"AlternatifController.php.html#10","App\\Http\\Controllers\\AlternatifController::index","1"],[100,1,"AlternatifController.php.html#16","App\\Http\\Controllers\\AlternatifController::create","1"],[100,1,"AlternatifController.php.html#21","App\\Http\\Controllers\\AlternatifController::store","1"],[100,1,"AlternatifController.php.html#34","App\\Http\\Controllers\\AlternatifController::edit","1"],[100,1,"AlternatifController.php.html#39","App\\Http\\Controllers\\AlternatifController::update","1"],[100,1,"AlternatifController.php.html#52","App\\Http\\Controllers\\AlternatifController::destroy","1"],[100,1,"AuthController.php.html#14","App\\Http\\Controllers\\AuthController::showLogin","1"],[100,2,"AuthController.php.html#19","App\\Http\\Controllers\\AuthController::login","2"],[100,1,"AuthController.php.html#39","App\\Http\\Controllers\\AuthController::showRegister","1"],[100,1,"AuthController.php.html#44","App\\Http\\Controllers\\AuthController::register","1"],[100,1,"AuthController.php.html#122","App\\Http\\Controllers\\AuthController::logout","1"],[100,1,"DashboardController.php.html#11","App\\Http\\Controllers\\DashboardController::index","1"],[100,1,"KriteriaController.php.html#11","App\\Http\\Controllers\\KriteriaController::index","1"],[100,1,"KriteriaController.php.html#17","App\\Http\\Controllers\\KriteriaController::create","1"],[100,1,"KriteriaController.php.html#58","App\\Http\\Controllers\\KriteriaController::edit","1"],[100,1,"KriteriaController.php.html#64","App\\Http\\Controllers\\KriteriaController::update","1"],[100,1,"KriteriaController.php.html#86","App\\Http\\Controllers\\KriteriaController::destroy","1"],[100,1,"KriteriaController.php.html#109","App\\Http\\Controllers\\KriteriaController::storeSubKriteria","1"],[100,1,"KriteriaController.php.html#125","App\\Http\\Controllers\\KriteriaController::destroySubKriteria","1"],[100,1,"LaporanController.php.html#12","App\\Http\\Controllers\\LaporanController::index","1"],[100,1,"PenilaianController.php.html#14","App\\Http\\Controllers\\PenilaianController::index","1"],[100,1,"PenilaianController.php.html#23","App\\Http\\Controllers\\PenilaianController::create","1"],[100,4,"PenilaianController.php.html#31","App\\Http\\Controllers\\PenilaianController::store","4"],[100,1,"PenilaianController.php.html#57","App\\Http\\Controllers\\PenilaianController::edit","1"],[100,1,"PenilaianController.php.html#95","App\\Http\\Controllers\\PenilaianController::destroy","1"],[100,1,"ProfileController.php.html#13","App\\Http\\Controllers\\ProfileController::index","1"],[100,1,"ProfileController.php.html#21","App\\Http\\Controllers\\ProfileController::update","1"],[100,2,"ProfileController.php.html#48","App\\Http\\Controllers\\ProfileController::updatePassword","2"]]</script>
+  <script type="text/javascript" defer>
+  const barLabels = [
+    '0%',
+    '0-10%',
+    '10-20%',
+    '20-30%',
+    '30-40%',
+    '40-50%',
+    '50-60%',
+    '60-70%',
+    '70-80%',
+    '80-90%',
+    '90-100%',
+    '100%'
+  ];
+  const barConfig = (name, fullName, values) => ({
+    axis: {
+      x: {
+        type: "category",
+        categories: barLabels,
+      },
+      y: {
+        label: {
+          text: `#${name}`,
+          position: 'outer-top',
+        },
+      },
+    },
+    bindto: `#${name}CoverageDistribution`,
+    data: {
+      columns: [
+        [fullName].concat(values),
+      ],
+      colors: {
+        [fullName]: "rgba(69, 114, 167, 0.75)",
+      },
+      type: "bar",
+    },
+    bar: {
+      width: {
+        ratio: 0.9,
+      },
+    },
+    grid: {
+      focus: {
+        show: false,
+      },
+      x: {
+        show: true,
+      },
+      y: {
+        show: true,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    tooltip: {
+      contents: function (data) {
+        return `<table class="bb-tooltip"><tbody>
+            <tr><th colspan="2">Coverage ${barLabels[data[0].x]}</th></tr>
+            <tr><td class="value">${data[0].value} ${name}</td></tr>
+          </tbody></table>`;
+      },
+      grouped: false,
+    },
+  });
+  bb.generate(
+    barConfig('classes', "Class Coverage", [0,0,0,0,0,2,0,1,1,0,2,4])
+  );
+  bb.generate(
+    barConfig('methods', "Method Coverage", [9,0,0,1,1,2,0,0,0,1,4,37])
+  );
+
+  const scatterConfig = (name, complexityData) => ({
+    axis: {
+      x: {
+        label: {
+          text: 'Code Coverage (in percent)',
+          position: 'outer-right',
+        },
+        tick: {
+          values: [0, 20, 40, 60, 80, 100],
+        },
+      },
+      y: {
+        label: {
+          text: 'Cyclomatic Complexity',
+          position: 'outer-top',
+        },
+        min: 0,
+        padding: {
+          bottom: 0,
+          top: 5,
+        },
+      },
+    },
+    bindto: `#${name}Complexity`,
+    data: {
+      columns: [
+        ["complexity_x"].concat(complexityData.map(d => d[0])),
+        ["complexity"].concat(complexityData.map(d => d[1])),
+      ],
+      onclick: function(data, element) {
+        window.location = complexityData[data.index][2];
+      },
+      type: "scatter",
+      xs: {
+        "complexity": "complexity_x",
+      },
+    },
+    grid: {
+      focus: {
+        show: true,
+        y: true,
+      },
+      x: {
+        show: true,
+      },
+      y: {
+        show: true,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    tooltip: {
+      contents: function (data) {
+        const coverage = Math.round(data[0].x);
+        const complexity = data[0].value;
+        const targetName = complexityData[data[0].index][3];
+        const crap = complexityData[data[0].index][4];
+        return `<table class="bb-tooltip"><tbody>
+            <tr><th colspan="2">${targetName}</th></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Coverage</td><td class="name">${coverage}%</td></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Complexity</td><td class="value">${complexity}</td></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Crap</td><td class="value">${crap}</td></tr>
+          </tbody></table>`;
+      },
+      grouped: false,
+    },
+  });
+  const classComplexityData = JSON.parse(document.getElementById('complexity_class').textContent);
+  bb.generate(
+    scatterConfig("class", classComplexityData)
+  );
+  const methodComplexityData = JSON.parse(document.getElementById('complexity_method').textContent);
+  bb.generate(
+    scatterConfig("method", methodComplexityData),
+  );
+  </script>
+ </body>
+</html>
